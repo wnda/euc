@@ -21,35 +21,38 @@
         var k = document.cookie.split(";"),
             i = k.length;
             
-        while(i--){
-          
-          if(k[i]===(settings.cookieName+"="+settings.cookieFlag)){
+        while(i--)
+        {
+          if(k[i] === (settings.cookieName + "=" + settings.cookieFlag))
+          {
             euc.showAlert();
           }
-          
         }
         
       },
       
       showAlert : function(){
         
-        var alertParent        = document.querySelector(settings.alertParentSelector),
-            alertElement       = document.createElement("div");
+        var alertParent  = settings.alertParentSelector.split("")[0]==="#"?document.getElementById(settings.alertParentSelector):document.querySelector(settings.alertParentSelector),
+            alertElement = document.createElement("div");
             
         alertElement.id            = settings.alertId,
         alertElement.innerHTML     = settings.alertContent,
         alertParent.className     += " " + settings.alertHook,
         settings.alertPlacementTop ? alertParent.insertBefore(alertElement, alertParent.firstChild) : alertParent.appendChild(alertElement);
         
-        if(alertElement.addEventListener){
+        if(alertElement.addEventListener)
+        {
           alertElement.querySelector(settings.alertCloseSelector)
             .addEventListener("click", euc.removeAlert,false);
         }
-        else if(alertElement.attachEvent){
+        else if(alertElement.attachEvent)
+        {
           alertElement.querySelector(settings.alertCloseSelector)
             .attachEvent("onclick", euc.removeAlert);
         }
-        else{
+        else
+        {
           alertElement.querySelector(settings.alertCloseSelector)
             .onclick = euc.removeAlert;
         }
