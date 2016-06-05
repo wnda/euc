@@ -7,13 +7,13 @@
           
       init: function(config){
         settings = {
-          cookieName   : config.cookieName   ? config.cookieName   : "euc",
-          cookieFlag   : config.cookieFlag   ? config.cookieFlag   : "true",
-          cookieMaxAge : config.cookieMaxAge ? config.cookieMaxAge : 14,
-          alertId      : config.alertId      ? config.alertId      : "cookieAlert",
-          alertContent : config.alertContent ? config.alertContent : "This website uses cookies. <a href='/privacy'>(?)</a><button>Okay.</button>",
-          alertHook    : config.alertHook    ? config.alertHook    : "show-cookie-alert",
-          alertClose   : config.alertClose   ? config.alertClose   : "button"
+          cookieName   : config && config.cookieName   ? config.cookieName   : "euc",
+          cookieFlag   : config && config.cookieFlag   ? config.cookieFlag   : "true",
+          cookieMaxAge : config && config.cookieMaxAge ? config.cookieMaxAge : 14,
+          alertId      : config && config.alertId      ? config.alertId      : "cookieAlert",
+          alertContent : config && config.alertContent ? config.alertContent : "This website uses cookies. <a href='/privacy'>(?)</a><button>Okay.</button>",
+          alertHook    : config && config.alertHook    ? config.alertHook    : "show-cookie-alert",
+          alertClose   : config && config.alertClose   ? config.alertClose   : "button"
         };
         
         if (document.cookie.indexOf(settings.cookieName) < 0)
