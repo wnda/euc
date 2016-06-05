@@ -75,8 +75,18 @@
         document.cookie = (settings.cookieName
                         + "="
                         + settings.cookieFlag
-                        + (settings.cookieMaxAge ? "; max-age=" + d.toGMTString() : "")
+                        + (settings.cookieMaxAge ? "; max-age=" + d.toUTCString() : "")
                         + "; path=/");
+      },
+      
+      removeCookie : function(){
+        
+        document.cookie = (settings.cookieName
+                        + "="
+                        + ""
+                        + "; max-age="
+                        + -1);
+        
       },
       
       removeAlert : function(){
