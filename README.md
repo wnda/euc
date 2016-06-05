@@ -2,9 +2,9 @@
 EU cookie alert in vanilla JS
 
 ## Usage
-Call `euc();` with the following optional settings:
+Call `euc.init();` with the following optional settings:
     
-    euc(
+    euc.init(
       {
         cookieName   : "eu_consent",
         cookieFlag   : "given",
