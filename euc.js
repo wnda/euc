@@ -18,7 +18,7 @@
           alertPlacementTop    : config && config.alertPlacementTop   ? config.alertPlacementTop   : true
         };
         
-        !!document.cookie && !euc.alreadyConsents && euc.showAlert();
+        !!document.cookie && !euc.alreadyConsents() && euc.showAlert();
         
       },
       
