@@ -37,12 +37,12 @@
         if(alertElement.addEventListener){
           alertElement.querySelector(settings.alertCloseSelector)
             .addEventListener("click", euc.removeAlert,false);
-            
-        }else if(alertElement.attachEvent){
+        }
+        else if(alertElement.attachEvent){
           alertElement.querySelector(settings.alertCloseSelector)
             .attachEvent("onclick", euc.removeAlert);
-            
-        }else{
+        }
+        else{
           alertElement.querySelector(settings.alertCloseSelector)
             .onclick = euc.removeAlert;
         }
@@ -52,9 +52,7 @@
       setCookie : function(){
         
         var d = new Date();
-        
         d.setTime(d.getTime() + 1e3 * 60 * 60 * 24 * settings.cookieMaxAge);
-        
         document.cookie = (settings.cookieName
                         + "="
                         + settings.cookieFlag
@@ -66,7 +64,6 @@
         
         document.getElementById(settings.alertId)
           .parentNode.removeChild(document.getElementById(settings.alertId));
-          
         euc.setCookie();
         
       }
