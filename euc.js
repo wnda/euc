@@ -18,7 +18,7 @@
           alertTop     : config && config.alertTop     ? config.alertTop     : true
         };
         
-        if (document.cookie.indexOf(settings.cookieName) < 0){
+        if(document.cookie.indexOf(settings.cookieName) < 0){
           euc.showAlert();
         }
       },
