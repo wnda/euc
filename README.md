@@ -1,6 +1,8 @@
 # euc.js
 "This site uses cookies" alert in vanilla JS. Cheerfully made possible by setting a cookie.
 
+42 sloc &middot; 1.68 KB (probably the lightest lib to achieve this functionality reliably and OOTB).
+
 
 ## Why?
 Because I live in the UK and it's mandatory to warn users within the EU of cookie use.
@@ -8,6 +10,10 @@ Because I live in the UK and it's mandatory to warn users within the EU of cooki
 I also don't like jQuery, and neither do I like hilariously verbose module loading or laborious build processes when concatenating scripts has been done efficiently without the likes of grunt, gulp, webpack, etc. for decades using bash, and npm scripts are even easier and less ridiculous.
 
 I also don't like releasing libs that are written in ES6 when no browsers fully support ES6 yet (c. 06/2016).
+
+Finally, I absolutely detest JS getting in the way of styling my shit. Layout and appearance should be delegated to CSS, and mark-up should be my choice as well.
+
+Thus, euc.js is here.
 
 
 ## Implementation
