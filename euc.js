@@ -14,7 +14,8 @@
           alertId      : config && config.alertId      ? config.alertId      : "cookieAlert",
           alertContent : config && config.alertContent ? config.alertContent : "This website uses cookies. <a href='/privacy'>(?)</a><button>Okay.</button>",
           alertHook    : config && config.alertHook    ? config.alertHook    : "show-cookie-alert",
-          alertClose   : config && config.alertClose   ? config.alertClose   : "button"
+          alertClose   : config && config.alertClose   ? config.alertClose   : "button",
+          alertTop     : config && config.alertTop     ? config.alertTop     : true
         };
         
         if (document.cookie.indexOf(settings.cookieName) < 0){
@@ -29,7 +30,7 @@
         alertElement.id        = settings.alertId,
         alertElement.innerHTML = settings.alertContent,
         bodyElement.className += " " + settings.alertHook,
-        bodyElement.appendChild(alertElement);
+        alertTop ? bodyElement.insertBefore(alertElement, bodyElement.firstChild) : bodyElement.appendChild(alertElement);
         
         if(alertElement.addEventListener){
           alertElement.querySelector(settings.alertClose).addEventListener("click",euc.removeAlert,false);
