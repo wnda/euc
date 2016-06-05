@@ -17,8 +17,7 @@
           alertClose   : config && config.alertClose   ? config.alertClose   : "button"
         };
         
-        if (document.cookie.indexOf(settings.cookieName) < 0)
-        {
+        if (document.cookie.indexOf(settings.cookieName) < 0){
           euc.showAlert();
         }
       },
@@ -29,7 +28,7 @@
             
         alertElement.id        = settings.alertId,
         alertElement.innerHTML = settings.alertContent,
-        bodyElement.className  += " " + settings.alertHook,
+        bodyElement.className += " " + settings.alertHook,
         bodyElement.appendChild(alertElement);
         
         if(alertElement.addEventListener){
