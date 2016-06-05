@@ -34,6 +34,7 @@ cookieMaxAge | number | days until the cookie expires
 alertId      | string | `id` attribute for your cookie warning banner
 alertContent | string | `innerHTML` for your cookie warning banner
 alertHook    | string | CSS class to add to the root or body element to indicate the banner's presence
+alertClose   | string | CSS selector for the element which, when clicked, will remove the banner and set the cookie
 
 
 ## Usage
@@ -46,6 +47,7 @@ Call `euc.init();` with the following optional settings:
         cookieMaxAge : 14,
         alertId      : "cookieLaw",
         alertContent : '<div class="cookie-crumble"><span class="cookie-crumble-text">This website uses cookies.&nbsp;<a href="/privacy" rel="nofollow">(?)</a></span><button class="cookie-crumble-close" onclick="euc.removeAlert()">Okay.</button></div>',
-        alertHook    : "show-cookie-warning"
+        alertHook    : "show-cookie-warning",
+        alertClose   : ".close-button"
       }
     );
