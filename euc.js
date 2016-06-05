@@ -17,7 +17,7 @@
           alertHook            : config && config.alertHook           ? config.alertHook           : "show-cookie-alert",
           alertCloseSelector   : config && config.alertCloseSelector  ? config.alertCloseSelector  : "button",
           alertParentSelector  : config && config.alertParentSelector ? config.alertParentSelector : "body",
-          alertPlacementTop    : config && config.alertPlacement      ? config.alertPlacement      : true
+          alertPlacementTop    : config && config.alertPlacementTop   ? config.alertPlacementTop   : true
         };
         
         if(document.cookie.indexOf(settings.cookieName) < 0){
