@@ -97,6 +97,7 @@
         
         document.getElementById(settings.alertId)
           .parentNode.removeChild(document.getElementById(settings.alertId));
+          
         euc.setCookie();
         
       }
