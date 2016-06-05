@@ -1,12 +1,10 @@
 ;(function(){
   
-  "use strict";
-    
   var settings;
   
   window.euc = {
           
-      init: function(config){
+      init : function(config){
         
         settings = {
           cookieName           : config && config.cookieName          ? config.cookieName          : "euc",
@@ -40,11 +38,11 @@
           alertElement.querySelector(settings.alertCloseSelector)
             .addEventListener("click", euc.removeAlert,false);
             
-        } else if(alertElement.attachEvent){
+        }else if(alertElement.attachEvent){
           alertElement.querySelector(settings.alertCloseSelector)
             .attachEvent("onclick", euc.removeAlert);
             
-        } else{
+        }else{
           alertElement.querySelector(settings.alertCloseSelector)
             .onclick = euc.removeAlert;
         }
