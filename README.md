@@ -7,7 +7,7 @@
 ## Why?
 Because I live in the UK and it's mandatory to warn users within the EU of cookie use.
 
-I also don't like jQuery, and neither do I like hilariously verbose module loading or laborious build processes when concatenating scripts has been done efficiently without the likes of grunt, gulp, webpack, etc. for decades using bash, and npm scripts are even easier and less ridiculous.
+I also don't like jQuery, and neither do I like hilariously verbose module loading or laborious build processes when concatenating scripts has been done efficiently without the likes of grunt, gulp, webpack, etc. for decades using bash, and npm scripts are even easier.
 
 I also don't like releasing libs that are written in ES6 when no browsers fully support ES6 yet (c. 06/2016).
 
