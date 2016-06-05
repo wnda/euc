@@ -2,8 +2,8 @@
   
   "use strict";
     
-  var settings,
-      euc = {
+  var settings;
+  window.euc = {
           
       init: function(config){
         settings = {
@@ -57,7 +57,4 @@
         euc.setCookie();
       },
     }
-    
-    window.euc = euc;
-    
 }());
