@@ -40,7 +40,7 @@ alertPlacementTop   |    boolean    | place the alert as the first child of the 
 
 
 ## Usage
-Call `euc.init();` with the following optional settings:
+Include `euc.js` (or `euc.min,js` in production) and subsequently call `euc.init();`, optionally passing in a `config` object the following control properties:
     
     euc.init(
       {
