@@ -42,13 +42,17 @@
       
       showAlert : function(){
         
-        var alertParent  = settings.alertParentSelector.split("")[0] === "#" ? document.getElementById(settings.alertParentSelector) : document.querySelector(settings.alertParentSelector),
+        var alertParent  = settings.alertParentSelector.split("")[0] === "#" ? 
+                             document.getElementById(settings.alertParentSelector) :
+                             document.querySelector(settings.alertParentSelector),
             alertElement = document.createElement("div");
             
         alertElement.id            = settings.alertId,
         alertElement.innerHTML     = settings.alertContent,
         alertParent.className     += " " + settings.alertHook,
-        settings.alertPlacementTop ? alertParent.insertBefore(alertElement, alertParent.firstChild) : alertParent.appendChild(alertElement);
+        settings.alertPlacementTop ?
+          alertParent.insertBefore(alertElement, alertParent.firstChild) : 
+          alertParent.appendChild(alertElement);
         
         if(alertElement.addEventListener)
         {
