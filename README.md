@@ -1,7 +1,7 @@
 # euc.js
 "This site uses cookies" alert in vanilla JS. Cheerfully made possible by setting a cookie.
 
-52 sloc (probably the lightest lib to achieve this functionality reliably and OOTB).
+51 sloc (probably the lightest lib to achieve this functionality reliably and OOTB).
 
 
 ## Why?
