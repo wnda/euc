@@ -56,6 +56,6 @@
 
   }
 
-  window.eucAlert = eucAlert;
+  window.eucInit = eucInit;
 
 }());
