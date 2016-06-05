@@ -27,15 +27,15 @@ To that end, strictly only the hooks needed for the plugin to function are assig
 ## Settings
 
 Object property | Expected type | Description
--------------|--------|------------------------
-cookieName   | string | The name of your cookie
-cookieFlag   | string | The indicator of your cookie state, be it "on", "true", etc.
-cookieMaxAge | number | days until the cookie expires
-alertId      | string | `id` attribute for your cookie warning banner
-alertContent | string | `innerHTML` for your cookie warning banner
-alertHook    | string | CSS class to add to the root or body element to indicate the banner's presence
-alertClose   | string | CSS selector for the element which, when clicked, will remove the banner and set the cookie
-alertTop     | boolean | place the alert as the first child of the `body` element (`true`) or as the last child of the `body` element (`false`)
+----------------|---------------|------------
+cookieName      |    string     | The name of your cookie
+cookieFlag      |    string     | The indicator of your cookie state, be it "on", "true", etc.
+cookieMaxAge    |    number     | days until the cookie expires
+alertId         |    string     | `id` attribute for your cookie warning banner
+alertContent    |    string     | `innerHTML` for your cookie warning banner
+alertHook       |    string     | CSS class to add to the root or body element to indicate the banner's presence
+alertClose      |    string     | CSS selector for the element which, when clicked, will remove the banner and set the cookie
+alertTop        |    boolean    | place the alert as the first child of the `body` element (`true`) or as the last child of the `body` element (`false`)
 
 
 ## Usage
