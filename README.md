@@ -13,8 +13,9 @@ To that end, strictly only the hooks needed for the plugin to function are assig
 
 ## Settings
 
-| cookieName | cookieFlag | cookieMaxAge | alertId | alertContent | alertHook |
-| The name of your cookie | The indicator of your cookie state, be it "on", "true", etc. | days until the cookie expires | `id` attribute for your cookie warning banner | `innerHTML` for your cookie warning banner | CSS class to add to the root or body element to indicate the banner's presence |
+cookieName | cookieFlag | cookieMaxAge | alertId | alertContent | alertHook
+--- | --- | --- | --- | --- | ---
+The name of your cookie | The indicator of your cookie state, be it "on", "true", etc. | days until the cookie expires | `id` attribute for your cookie warning banner | `innerHTML` for your cookie warning banner | CSS class to add to the root or body element to indicate the banner's presence
 
 ## Usage
 Call `euc.init();` with the following optional settings:
