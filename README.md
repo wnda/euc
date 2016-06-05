@@ -1,7 +1,7 @@
 # euc.js
-"This site uses cookies" alert in vanilla JS. Cheerfully made possible by setting a cookie.
+"This site uses cookies" alert in vanilla JS. Works by cheerfully by setting a cookie for people who are fine with cookies.
 
-51 sloc (probably the lightest lib to achieve this functionality reliably and OOTB).
+@54 sloc, this is a light and flexible lib with defaults to get up and running with no configuration.
 
 
 ## Why?
@@ -26,16 +26,17 @@ To that end, strictly only the hooks needed for the plugin to function are assig
 
 ## Settings
 
-Object property | Expected type | Description
-----------------|---------------|------------
-cookieName      |    string     | The name of your cookie
-cookieFlag      |    string     | The indicator of your cookie state, be it "on", "true", etc.
-cookieMaxAge    |    number     | days until the cookie expires
-alertId         |    string     | `id` attribute for your cookie warning banner
-alertContent    |    string     | `innerHTML` for your cookie warning banner
-alertHook       |    string     | CSS class to add to the root or body element to indicate the banner's presence
-alertClose      |    string     | CSS selector for the element which, when clicked, will remove the banner and set the cookie
-alertTop        |    boolean    | place the alert as the first child of the `body` element (`true`) or as the last child of the `body` element (`false`)
+Object property     | Expected type | Description
+--------------------|---------------|------------
+cookieName          |    string     | The name of your cookie
+cookieFlag          |    string     | The indicator of your cookie state, be it "on", "true", etc.
+cookieMaxAge        |    number     | days until the cookie expires
+alertId             |    string     | `id` attribute for your cookie warning banner
+alertContent        |    string     | `innerHTML` for your cookie warning banner
+alertHook           |    string     | CSS class to add to the root or body element to indicate the banner's presence
+alertCloseSelector  |    string     | CSS selector for the element which, when clicked, will remove the banner and set the cookie
+alertParentSelector |    string     | CSS selector for the element which, when clicked, will remove the banner and set the cookie
+alertPlacementTop   |    boolean    | place the alert as the first child of the `body` element (`true`) or as the last child of the `body` element (`false`)
 
 
 ## Usage
@@ -43,13 +44,14 @@ Call `euc.init();` with the following optional settings:
     
     euc.init(
       {
-        cookieName   : "eu_consent",
-        cookieFlag   : "given",
-        cookieMaxAge : 14,
-        alertId      : "cookieLaw",
-        alertContent : '<div class="cookie-crumble"><span class="cookie-crumble-text">This website uses cookies.&nbsp;<a href="/privacy" rel="nofollow">(?)</a></span><button class="cookie-crumble-close" onclick="euc.removeAlert()">Okay.</button></div>',
-        alertHook    : "show-cookie-warning",
-        alertClose   : ".close-button",
-        alertTop     : false
+        cookieName           : "eu_consent",
+        cookieFlag           : "given",
+        cookieMaxAge         : 14,
+        alertId              : "cookieLaw",
+        alertContent         : '<div class="cookie-crumble"><span class="cookie-crumble-text">This website uses cookies.&nbsp;<a href="/privacy" rel="nofollow">(?)</a></span><button class="cookie-crumble-close" onclick="euc.removeAlert()">Okay.</button></div>',
+        alertHook            : "show-cookie-warning",
+        alertParentSelector  : "body",
+        alertCloseSelector   : ".close-button",
+        alertPlacementTop    : false
       }
     );
