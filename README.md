@@ -14,10 +14,15 @@ To that end, strictly only the hooks needed for the plugin to function are assig
 ## Settings
 
 cookieName   | string | The name of your cookie
+-------------|--------|------------------------
 cookieFlag   | string | The indicator of your cookie state, be it "on", "true", etc.
+-------------|--------|------------------------
 cookieMaxAge | number | days until the cookie expires
+-------------|--------|------------------------
 alertId      | string | `id` attribute for your cookie warning banner
+-------------|--------|------------------------
 alertContent | string | `innerHTML` for your cookie warning banner
+-------------|--------|------------------------
 alertHook    | string | CSS class to add to the root or body element to indicate the banner's presence
 
 ## Usage
