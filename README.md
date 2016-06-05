@@ -1,7 +1,7 @@
 # euc.js
 "This site uses cookies" alert in vanilla JS. Works by cheerfully by setting a cookie for people who are fine with cookies.
 
-@54 sloc, this is a light and flexible lib with defaults to get up and running with no configuration.
+@80 sloc, this is a light and flexible lib with defaults to get up and running with no configuration.
 
 
 ## Why?
