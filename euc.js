@@ -18,8 +18,15 @@
           alertPlacementTop    : config && config.alertPlacementTop   ? config.alertPlacementTop   : true
         };
         
-        if(document.cookie.indexOf(settings.cookieName) < 0){
-          euc.showAlert();
+        var k = document.cookie.split(";"),
+            i = k.length;
+            
+        while(i--){
+          
+          if(k[i]===(settings.cookieName+"="+settings.cookieFlag)){
+            euc.showAlert();
+          }
+          
         }
         
       },
