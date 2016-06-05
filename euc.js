@@ -3,6 +3,7 @@
   "use strict";
     
   var settings;
+  
   window.euc = {
           
       init: function(config){
