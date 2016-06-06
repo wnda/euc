@@ -65,15 +65,17 @@
     </div>
     <div class="tabpane">
     <h2>Why make this lib?</h2>
-    
+    <p>Because I live in the UK and it's mandatory to warn users within the EU of cookie use.</p>
+    <p>I also don't like jQuery, and neither do I like hilariously verbose module loading or laborious build processes when concatenating scripts has been done efficiently without the likes of grunt, gulp, webpack, etc. for decades using bash, and npm scripts are even easier.</p>
+    <p>I also don't like releasing libs that are written in ES6 when no browsers fully support ES6 yet (c. 06/2016).</p>
+    <p>Finally, I absolutely detest JS getting in the way of styling my shit. Layout and appearance should be delegated to CSS, and mark-up should be my choice as well.</p>
+    <p>Thus, euc.js is here.</p>
     </div>
     <div class="tabpane">
     <h2>How does it work?</h2>
-    <p>stabs.js uses only vanilla JavaScript primarily relying on <code>for</code> loops and <code>classList</code>.</p>
-    <p>This small lib loops through everything in the DOM and adds event listeners to everything that is a &ldquo;tab&rdquo; in a tabcontainer.</p>
-    <p>These event listeners wait for a tab to be clicked and then, if the tab is not active, it and its corresponding tabpane are given an active CSS class and all other tabs/tabpanes have their active status removed.</p>
-    <p>This might seem like cheating, but the approach could easily be adapted to manipulate styles directly. However, appending and removing classes is ultimately more efficient, and also enables the exact way tabs are displayed/hidden to be very flexible to the CSS-savvy dev.</p>
-    <p>This is ultimately the simplest way to work with tabs.</p>
+    <p>Following a fairly standard pattern (with a dirty shortcut for init/config object extension) for a JS 'plugin', the aim of this lib is to offer as much configuration as possible without getting in the way.</p>
+    <p>The contents of your cookie alert banner, for instance, may vary tremendously per each project, as might the ways in which you want to display the banner.</p>
+    <p>To that end, strictly only the hooks needed for the plugin to function are assigned their own object properties, while the innerHTML and all the styling is left up to you.</p>
     </div>
     <div class="tabpane">
     <h2>How does one use it?</h2>
