@@ -52,22 +52,17 @@
     <button class="tab active">The What</button>
     <button class="tab">The Why</button>
     <button class="tab">The How</button>
-    <button class="tab">Using stabs</button>
+    <button class="tab">Using euc.js</button>
     <button class="tab">FAQs</button>
     <div class="tabpane active">
     <h2>What is euc.js?</h2>
-    <p>stabs.js is a JavaScript module for warning your users that your website uses cookies, in order to comply with EU regulations.</p>
-    <p>The lib is just shy of 2.5 kilobytes in size, or 1 kilobyte when minified.</p>
-    <p>It&rsquo;s not something I&rsquo;m proud of. It&rsquo;s not the friendliest or the most modern approach.</p>
-    <p>However, it&rsquo;s easy to use, you can customise how it works, and it's pretty robust.</p>
+    <p>euc.js is a JavaScript module for warning your users that your website uses cookies, in order to comply with EU regulations.</p>
+    <p>The lib is just shy of 3.5 kilobytes in size @ 80 sloc.</p>
+    <p>It&rsquo;s easy to use, you can customise how it works, and it's pretty robust.</p>
     </div>
     <div class="tabpane">
     <h2>Why make this lib?</h2>
-    <p>Bootstrap and other libraries/frameworks tend to require jQuery. Not surprising. My 50 lines of vanilla would probably be about 8 lines of jQuery.</p>
-    <p>However, it is 2016 and ES5/ES6 are gaining traction, and the ES3 that is actually supported in the real world is now largely standardised even in IE.</p>
-    <p>There are of course some vanilla JS alternatives, but they all force hash fragments and that's a feature I really didn&lsquo;t want.</p>
-    <p>I wanted something lean and robust.</p>
-    <p>Thus, stabs.js was born.</p>
+    
     </div>
     <div class="tabpane">
     <h2>How does it work?</h2>
@@ -79,28 +74,27 @@
     </div>
     <div class="tabpane">
     <h2>How does one use it?</h2>
-    <p>Include <code>stabs.min.js</code> in your page and below call the function, optionally passing in a configuration object like so:</p>
+    <p>Include <code>euc.min.js</code> in your page and call <code>euc.init()</code>, optionally passing in the <code>config</code> object:</p>
     <pre>
-    stabs({
-      tabcontainer: "tabcontainer",
-      tab: "tab",
-      tabpane: "tabpane",
-      active: "active",
-      addhash: false
+    euc.init({
+      cookieName           : "eu_consent",
+      cookieFlag           : "given",
+      cookieMaxAge         : 14,
+      alertId              : "cookieLaw",
+      alertContent         : '<span>This website uses cookies. <a href="/privacy" rel="nofollow">(?)</a></span><button onclick="euc.removeAlert()">Okay.</button>',
+      alertHook            : "show-cookie-warning",
+      alertParentSelector  : "body",
+      alertCloseSelector   : ".close-button",
+      alertPlacementTop    : false
     });
     </pre>
-    <p>Then just make sure you have elements corresponding to your selectors. <strong>Only CSS classes are supported as selectors at the moment</strong>, and you should not include the periods/full-stops preceding the class names in your config object, as these are added automatically.</p>
-    <p>Updates will include accommodation for any and all selectors supported by <code>querySelectorAll</code>. Using <code>querySelectorAll</code> means that the <code>tabs</code>/<code>tabpanes</code> can be structured however you please, as long as they are all within the <code>tabcontainer</code>.</p>
-    <p>You need a containing element and the tabs and tabpanes must be children of the container, though they need not necessarily be immediate children.</p>
-    <p>Passing in <code>true</code> for <code>addhash</code> enables hash fragments for your tabs if you want it.</p>
+    <p>Then just make sure you have elements corresponding to your selectors. Use any CSS selector you like. There is an optimization in place should you pass in an <code>id</code>.</p>
     </div>
     <div class="tabpane">
     <h2>FAQs</h2>
-    <details><summary>Can I nest tabs?</summary>No. This library represents the outcome of a choice: flexible markup or amenability to nesting. Nesting can be done simply if you iterate only over sibling elements to tabs, but then your tabs and tabpanes must be at the same level of the DOM. That sucks. You want to be able to use whatever markup you need to use. And if you're nesting tabs you're probably doing something very bad in terms of UI design.</details>
-    <details><summary>What&rsquo;s the ol&rsquo; IE compatibility like?</summary>IE8 due to the use of <code>querySelectorAll</code>. You might think that <code>classList</code> would mean that minimum un-polyfilled support for IE would be IE10, but a (very) rudimentary polyfill for adding/removing CSS classes is included as the <code>amendCss</code> function.</details>
-    <details><summary>Why <code>classList</code>?</summary>I did originally try to keep to just <code>className</code> amends, but the code was rather inefficient. <code>classList</code> is a no-brainer.</details>
+    <details><summary>What&rsquo;s the ol&rsquo; IE compatibility like?</summary>IE8 due to the use of <code>querySelector</code> among other things. Fortunately, I avoided the use of <code>indexOf</code> for cookie detection, so there's nothing to polyfill unless you're targeting lt IE7.</details>
     <details><summary>Who wrote this lib?</summary><a href="https://amdouglas.com">A. M. Douglas, a freelance web developer based in Leeds, UK.</a></details>
-    <details><summary>Is this open source?</summary><a href="https://github.com/wnda/stabs">wnda/stabs</a></details>
+    <details><summary>Is this open source?</summary><a href="https://github.com/wnda/euc">wnda/stabs</a></details>
     </div>
     </div>
     
