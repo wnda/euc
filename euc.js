@@ -18,11 +18,11 @@
           alertPlacementTop    : config && config.alertPlacementTop   ? config.alertPlacementTop   : true
         };
         
-        !!document.cookie && !euc.alreadyConsents() && euc.showAlert();
+        !!document.cookie && !euc.checkCookie() && euc.showAlert();
         
       },
       
-      alreadyConsents : function(){
+      checkCookie : function(){
         
         var k = document.cookie.split("; "),
             l = k.length,
@@ -32,11 +32,11 @@
         {
           if(k[l] === m)
           {
-            return true;
+            return false;
           }
         }
         
-        return false;
+        return true;
         
       },
       
