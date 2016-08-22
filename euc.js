@@ -8,7 +8,7 @@
         
         settings = {
           cookieName           : config && config.cookieName          ? config.cookieName          : "euc",
-          cookieFlag           : config && config.cookieFlag          ? config.cookieFlag          : "true",
+          cookieFlag           : config && config.cookieFlag          ? config.cookieFlag          : "on",
           cookieMaxAge         : config && config.cookieMaxAge        ? config.cookieMaxAge        : 14,
           alertId              : config && config.alertId             ? config.alertId             : "cookieAlert",
           alertContent         : config && config.alertContent        ? config.alertContent        : "This website uses cookies. <a href='/privacy'>(?)</a><button>Okay.</button>",
@@ -32,11 +32,11 @@
         {
           if(k[l] === m)
           {
-            return false;
+            return true;
           }
         }
         
-        return true;
+        return false;
         
       },
       
