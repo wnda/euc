@@ -18,11 +18,11 @@
           alertPlacementTop    : config && config.alertPlacementTop   ? config.alertPlacementTop   : true
         };
         
-        !!document.cookie && !euc.alreadyConsents() && euc.showAlert();
+        !!document.cookie && !euc.checkCookie() && euc.showAlert();
         
       },
       
-      alreadyConsents : function(){
+      checkCookie : function(){
         
         var k = document.cookie.split("; "),
             l = k.length,
@@ -32,18 +32,18 @@
         {
           if(k[l] === m)
           {
-            return true;
+            return false;
           }
         }
         
-        return false;
+        return true;
         
       },
       
       showAlert : function(){
         
         var alertParent  = settings.alertParentSelector.split("")[0] === "#" ? 
-                             document.getElementById(settings.alertParentSelector) :
+                             document.getElementById(settings.alertParentSelector.substr(1)) :
                              document.querySelector(settings.alertParentSelector),
             alertElement = document.createElement("div");
             
